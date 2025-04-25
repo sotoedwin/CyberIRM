@@ -1,0 +1,14 @@
+
+id_rsa
+id_rsa.pub
+*.pem
+*.key
+
+.env
+
+node_modules/
+venv/
+.pytest_cache/
+__pycache__/
+*.pyc
+.vscode/
