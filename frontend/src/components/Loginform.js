@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LoginContainer, LoginFormWrapper, Input, Button, Title } from "../styles/Loginformstyle";
 
 const LoginForm = ({ onSubmit }) => {
   const [credentials, setCredentials] = useState({
@@ -19,28 +20,30 @@ const LoginForm = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Iniciar sesión</h2>
-      <input
-        type="text"
-        name="username"
-        placeholder="Usuario"
-        value={credentials.username}
-        onChange={handleChange}
-        required
-      />
-      <br />
-      <input
-        type="password"
-        name="password"
-        placeholder="Contraseña"
-        value={credentials.password}
-        onChange={handleChange}
-        required
-      />
-      <br />
-      <button type="submit">Iniciar sesión</button>
-    </form>
+    <LoginContainer>
+      <LoginFormWrapper>
+        <Title>Iniciar sesión</Title>
+        <form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="username"
+            placeholder="Usuario"
+            value={credentials.username}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="Contraseña"
+            value={credentials.password}
+            onChange={handleChange}
+            required
+          />
+          <Button type="submit">Iniciar sesión</Button>
+        </form>
+      </LoginFormWrapper>
+    </LoginContainer>
   );
 };
 
